@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->boolean('is_admin');
             $table->string('photo')->nullable();
-            $table->string('device_name');
+            $table->string('device_name')->default('web');
             $table->rememberToken();
             $table->timestamps();
         });

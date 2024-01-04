@@ -60,6 +60,13 @@
                                 <input type="password" name="password" class="form-control">
                             </div>
                             <div class="form-group">
+                                <label for="">Device Name</label>
+                                <select class="form-control" name="device_name" id="device_name">
+                                    <option value="web">Web</option>
+                                    <option value="android">Android</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="" style="display: block">Is Admin</label>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" name="is_admin" type="radio" id="inlineRadio1" value="1">

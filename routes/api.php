@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AttendanceController;
 use App\Http\Controllers\Api\Auth\AuthController;
+use App\Http\Controllers\Api\Auth\ForgotPasswordController;
 use App\Http\Controllers\Api\Auth\PasswordController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -27,7 +28,7 @@ Route::group(['prefix' => 'auth'], function () {
     Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
 
     Route::post('/password/reset', [PasswordController::class, 'reset'])->middleware('auth:sanctum');
-    Route::post('/password/forgot', [PasswordController::class, 'sendResetLinkEmail']);
+    Route::post('/password/forgot', [ForgotPasswordController::class, 'sendResetLinkEmail']);
 });
 
 Route::group(['middleware' => 'auth:sanctum'], function () {

@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AttendanceController extends Controller
 {
-    // use ImageStorage;
+    use ImageStorage;
 
     /**
      * Store presence status

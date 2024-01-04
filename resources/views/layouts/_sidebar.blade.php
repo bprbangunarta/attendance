@@ -2,7 +2,7 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-            <img src="https://avatars.dicebear.com/api/bottts/example.svg?options%5Bcolors%5D%5B%5D=cyan"
+            <img src="https://adminlte.io/themes/v3/dist/img/user2-160x160.jpg"
                 class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">

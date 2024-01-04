@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Charts\AttendanceChart;
+use App\Models\Attendance;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +26,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $chart = new AttendanceChart();
+        $chart->labels(['Today']);
+        $chart->dataset('In', 'bar', [Attendance::countAttendance(false)])
+            ->backgroundColor('#3490DC');
+        $chart->dataset('Out', 'bar', [Attendance::countAttendance(true)])
+            ->backgroundColor('#E3342F');
+        $chart->dataset('Total User', 'line', [User::where('is_admin', false)->count()])
+            ->color('#38C172')->fill(false);
+        return view('home', compact('chart'));
     }
 }

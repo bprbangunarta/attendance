@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AttendanceController;
 use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\Auth\PasswordController;
 use Illuminate\Http\Request;
@@ -27,4 +28,9 @@ Route::group(['prefix' => 'auth'], function () {
 
     Route::post('/password/reset', [PasswordController::class, 'reset'])->middleware('auth:sanctum');
     Route::post('/password/forgot', [PasswordController::class, 'sendResetLinkEmail']);
+});
+
+Route::group(['middleware' => 'auth:sanctum'], function () {
+    Route::post('/attendance', [AttendanceController::class, 'store']);
+    Route::get('/attendance/history', [AttendanceController::class, 'history']);
 });
